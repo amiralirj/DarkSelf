@@ -11,6 +11,7 @@
 - - Cleaning private chats every day (except pinned ones)
 - ### Many other practical facilities 💎
 - - Send "help" to see commands 
+- - Anti-login , Random bio , Answering , Clerk , Entertaining commmands ... 
 
 # How to run :
 - replace API_ID , API_HASH 
