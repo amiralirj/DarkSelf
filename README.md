@@ -10,3 +10,9 @@
 - ### Cleaning 🧹
 - - Cleaning private chats every day (except pinned ones)
 - ### Many other practical facilities 💎
+- - Send "help" to see commands 
+
+# How to run :
+- replace API_ID , API_HASH 
+- python __main__.py 
+- enjoy :) 
