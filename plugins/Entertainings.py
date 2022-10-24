@@ -4,18 +4,18 @@ from Config.TEXTS import Text
 from asyncio import sleep
 
 
-@Rjself.on_message((helper.fil('(?i)^who$') | helper.fil('(?i)^کی') ) , group=0)
+@Rjself.on_message((helper.fil('(?i)^who') | helper.fil('(?i)^کی') ) , group=0)
 @helper.is_on
 async def who_is(bot,message):
     users=[]
+    users_dic={}
     text=str(message.text)
     async for i in bot.get_chat_history(message.chat.id,300):
-        user=int(i.from_user)
-        if not user in users:
-            users.append(user)
-    text=text.removeprefix('who').removeprefix('کی')
+        users.append(int(i.from_user.id))
+        users_dic[int(i.from_user.id)]=i.from_user
+    text=text.strip('who').strip('کی').replace('?','')
     user=choice(users)
-    await message.reply_text(f'{user.mention()} {text}')
+    await message.reply_text(f'. {users_dic[user].mention()} {text} .')
         
 @Rjself.on_message(helper.fil('(?i)^kill$') , group=0)
 @helper.is_on

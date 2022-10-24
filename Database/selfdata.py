@@ -89,7 +89,7 @@ class Data:
         return [i for i in (self.c.fetchall())]
     #--------------------------------------------------------------------------------------------
     def add_enemy(self,user_id):
-        self.c.execute('INSERT  INTO Enemy (user_id) VALUES (:user_id)',{'User_id':user_id})
+        self.c.execute('INSERT  INTO Enemy (user_id) VALUES (:User_id)',{'User_id':user_id})
         self.con.commit()
         
     def rem_enemy(self,user_id):

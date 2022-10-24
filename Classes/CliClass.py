@@ -16,23 +16,16 @@ import Config
 
 #----------------------------------------------------------------------------------------------------------------| 
 class Rjself(Client):                                                                                          #-|
-    def __init__(self,bot=False):                                                                              #-| YOU CAN ADD A ADDITIONAL BOT FOR INLINE PANNEL !
-        token=None                                                                                             #-|
-        type='cli'                                                                                             #-|
-        if bot :                                                                                               #-|
-            token= Config.BOTTOKEN                                                                             #-|
-            type='bot'                                                                                         #-|
-        #--------------------------------------------------------------------------------------------------------|
+    def __init__(self):                                                                                        #-| 
         super().__init__(                                                                                      #-|
-            f"@amiralirj_official {type}",                                                                     #-|
-            plugins=dict(root=f'plugins/{type}'),                                                              #-|
+            f"@amiralirj_official ",                                                                           #-|
+            plugins=dict(root=f'plugins'),                                                                     #-|
             api_id=Config.API_ID,                                                                              #-|
             api_hash=Config.API_HASH,                                                                          #-|
             sleep_threshold=60,                                                                                #-|
             parse_mode=ParseMode.MARKDOWN,                                                                     #-|
             workers=10,                                                                                        #-|
             in_memory=False,                                                                                   #-|
-            bot_token=token,                                                                                   #-|
             workdir='./Database')                                                                              #-|
 #----------------------------------------------------------------------------------------------------------------|
     async def edit_ask(self, text, MESSAGE , filters=filters.me, timeout=30 ):                                 #-|
