@@ -12,7 +12,7 @@
 - ### Many other practical facilities 💎
 - - Send "help" to see commands 
 - - Anti-login , Random bio , Answering , Clerk , Entertaining commmands ... 
-
+- - Support 2 languages 'fa' and 'en' -> lang en -> lang fa 
 # How to run :
 - replace API_ID , API_HASH 
 - python __main__.py 
