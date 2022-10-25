@@ -4,7 +4,7 @@ from Config.TEXTS import Text
 from asyncio import sleep
 
 
-@Rjself.on_message((helper.fil('(?i)^who') | helper.fil('(?i)^کی') ) , group=0)
+@Rjself.on_message((helper.fil('(?i)^who ') | helper.fil('(?i)^کی ' ) ) , group=0)
 @helper.is_on
 async def who_is(bot,message):
     users=[]
@@ -13,7 +13,7 @@ async def who_is(bot,message):
     async for i in bot.get_chat_history(message.chat.id,300):
         users.append(int(i.from_user.id))
         users_dic[int(i.from_user.id)]=i.from_user
-    text=text.strip('who').strip('کی').replace('?','')
+    text=text.strip('who ').strip('کی ').strip('?','')
     user=choice(users)
     await message.reply_text(f'. {users_dic[user].mention()} {text} .')
         
