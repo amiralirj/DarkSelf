@@ -11,9 +11,9 @@
 - - Cleaning private chats every day (except pinned ones)
 - ### Many other practical facilities 💎
 - - Send "help" to see commands 
-- - Anti-login , Random bio , Answering , Clerk , Auto reaction and read , Entertaining commmands ... 
+- - Anti-login , Random bio , Answering , Clerk , Auto reaction and read , status changes , typemodel , Entertaining and practical commmands ... 
 - - Support 2 languages 'fa' and 'en' -> lang en -> lang fa 
 # How to run :
 - replace API_ID , API_HASH 
-- python __main__.py 
+- python ____main____.py 
 - enjoy :) 
