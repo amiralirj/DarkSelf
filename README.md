@@ -1,5 +1,6 @@
 # DarkSelf 🌒
 ❄️⚡️TELEGRAM SUPER MANAGER  
+![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) [![GitHub license](https://img.shields.io/github/license/amiralirj/DarkSelf.svg)](https://github.com/amiralirj/DarkSelf/blob/master/LICENSE)
 ## Features ⚡️
 - ### Save chats and get backup from it 📥
 - - even somebody delete the chat , chat will be accessible 
