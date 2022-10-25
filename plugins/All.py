@@ -70,7 +70,7 @@ async def deleted_message(bot,messages,user):
 async def joining_messages(bot,message,user):
     chat = int(message.chat.id)
     
-    if user.New_Group_Lock and not m.from_user.is_self: 
+    if user.New_Group_Lock and not message.from_user.is_self: 
         for u in message.new_chat_members : 
             if u.is_self :
                 await message.chat.leave()
@@ -103,6 +103,7 @@ async def outgoing_messages(bot,message,user):
             else: text = f'` {message.text} `'
             await message.edit_text(text)
         else:
+            if len(message.text) > 20 : return
             text=''
             try:
                 for i in str(message.text) : 
