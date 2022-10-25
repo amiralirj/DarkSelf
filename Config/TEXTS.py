@@ -16,7 +16,7 @@ class Text :
         self.not_found = 'E404 : does not match any pages. Try another id! '
         
         
-        self.channel_mid_link=lambda  id , peer : f'https://t.me/c/{str(abs(int(peer))).strip('100')}/{int(id)}'
+        self.channel_mid_link=lambda  id , peer : f'https://t.me/c/{str(abs(int(peer))).strip("100")}/{int(id)}'
         self.message_deleted=lambda id , name , text : f'''DELETED 🗑 : 
         
 💡 id : {id} 
