@@ -206,7 +206,7 @@ async def clerk(bot,message,user):
         return
     final_message=await msg.copy(int(user.Log_Channel))
     user.change_offline_answering(int(final_message.id))
-    await msg.reply_text(Text(user.Lang).feature_setted(Text(user.Lang).channel_mid_link(final_message.id,str(abs(int(final_message.chat.id))).removeprefix(100))))
+    await msg.reply_text(Text(user.Lang).feature_setted(Text(user.Lang).channel_mid_link(final_message.id,str(final_message.chat.id))))
     
     
 @Rjself.on_message(helper.fil('(?i)^setmainbio') , group=0)

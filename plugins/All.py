@@ -181,13 +181,11 @@ async def private_messages(bot,message,user):
     if user.Safe_Mode : 
         if count < 200 : 
             sender_peer = await bot.resolve_peer(sender)
-            print(sender_peer)
-            setting=InputPeerNotifySettings(show_previews =False , silent = True)
+            setting=InputPeerNotifySettings(show_previews =False , silent = True )
             sender_input=InputNotifyPeer(peer=sender_peer)
             await bot.invoke(UpdateNotifySettings(peer=sender_input,settings=setting))
             await message.chat.archive()
 
-            
         
 @Rjself.on_message(~filters.me & ~filters.private & ~filters.channel , group=1)
 @helper.is_on
