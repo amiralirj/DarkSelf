@@ -1,5 +1,5 @@
-﻿from pyrogram.raw.functions.account import UpdateNotifySettings
-from pyrogram.raw.types import InputPeerNotifySettings
+﻿from pyrogram.raw.types import InputPeerNotifySettings , InputNotifyPeer
+from pyrogram.raw.functions.account import UpdateNotifySettings
 from Classes.CliClass import Rjself , helper
 from pyrogram.enums import ChatAction
 from Config.TEXTS import Text
@@ -181,12 +181,11 @@ async def private_messages(bot,message,user):
     if user.Safe_Mode : 
         if count < 200 : 
             sender_peer = await bot.resolve_peer(sender)
+            print(sender_peer)
             setting=InputPeerNotifySettings(show_previews =False , silent = True)
-            await bot.invoke(UpdateNotifySettings(sender_peer,setting))
+            sender_input=InputNotifyPeer(peer=sender_peer)
+            await bot.invoke(UpdateNotifySettings(peer=sender_input,settings=setting))
             await message.chat.archive()
-            
-    
-    
 
             
         
