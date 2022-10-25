@@ -204,7 +204,7 @@ async def clerk(bot,message,user):
         user.change_offline_answering(0)
         await msg.edit_text(Text(user.Lang).removed)
         return
-    final_message=await msg.copy(user.change_lchannel)
+    final_message=await msg.copy(int(user.Log_Channel))
     user.change_offline_answering(int(final_message.id))
     await msg.reply_text(Text(user.Lang).feature_setted(Text(user.Lang).channel_mid_link(final_message.id,str(abs(int(final_message.chat.id))).removeprefix(100))))
     
