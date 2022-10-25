@@ -89,7 +89,7 @@ class Rjself(Client):                                                           
         sessions=await self.invoke(GetAuthorizations())
         
         for i in sessions.authorizations :
-            dt = datetime.fromtimestamp(int(i.date_active)) + timedelta(minutes=2)
+            dt = datetime.fromtimestamp(int(i.date_active)) + timedelta(minutes=15)
             now=datetime.now()
             if dt > now and not i.current  :
                 return True
