@@ -13,7 +13,7 @@ async def who_is(bot,message):
     async for i in bot.get_chat_history(message.chat.id,300):
         users.append(int(i.from_user.id))
         users_dic[int(i.from_user.id)]=i.from_user
-    text=text.strip('who ').strip('کی ').strip('?','')
+    text=text.strip('who ').strip('کی ').strip('?')
     user=choice(users)
     await message.reply_text(f'. {users_dic[user].mention()} {text} .')
         

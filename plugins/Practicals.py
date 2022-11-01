@@ -1,6 +1,7 @@
 ﻿from Classes.CliClass import Rjself , helper
 from datetime import datetime , timedelta
 from pyrogram.enums import ChatType
+from pyrogram import errors
 from asyncio import sleep
 from os import listdir
 import wikipedia
@@ -75,6 +76,21 @@ async def forward_privates(bot,message,user,text):
     else : await message.edit_text(text.should_replied)
         
 
+@Rjself.on_message(helper.fil('(?i)^mydel') , group=0)
+@helper.is_on
+@helper.user_Details
+@helper.text_adder
+async def delete_my_messages(bot,message,_,text):
+    chat_id = int(message.chat.id)
+    async for msg in bot.get_chat_history(chat_id):
+        try:
+            if msg.from_user.is_self : 
+                await msg.delete()
+        except errors.FloodWait as e : 
+            await sleep(e.value)
+        except : pass
+    await message.reply_text(text.all_m_deleted)
+    
 @Rjself.on_message(helper.fil('(?i)^replytag') , group=0)
 @helper.is_on
 @helper.user_Details
@@ -85,12 +101,12 @@ async def replying_tag(bot,message,_,text):
     rep_text=message.text[9:]
     chat_id = int(message.chat.id)
     is_replying[chat_id]=True
-    async for mag in bot.iter_history(chat_id,limit=1000):
+    async for msg in bot.get_chat_history(chat_id,limit=1000):
         try:
-            if mag.from_user.id not in taglist:
-                await mag.reply_text(rep_text)
+            if msg.from_user.id not in taglist:
+                await msg.reply_text(rep_text)
                 try:
-                    taglist.append(mag.from_user.id)
+                    taglist.append(msg.from_user.id)
                 except:
                     pass
                 await sleep(1)

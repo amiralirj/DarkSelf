@@ -37,6 +37,7 @@ status:{User_Info.status}
 pear id: {User_Info.id}
 dc id :{User_Info.dc_id }'''
         if not lang:
+            self.all_m_deleted = 'All Messages Deleted !'
             self.deleted = 'User has been deleted !'
             self.only_text = 'This amount can only be text!'
             self.all_removed = 'All values ​​were deleted 🗑'
@@ -59,7 +60,7 @@ dc id :{User_Info.dc_id }'''
             self.timeout = 'The amount was not received and the process was canceled ⏱❌'
             self.on = 'on'
             self.off = 'off'
-    
+
     
 
             self.bot_turn=lambda turn : f'''🔴 Bot has turned {turn} 🟢'''
@@ -330,7 +331,7 @@ Language : ENGLISH
 `info` [reply]
 `block`
 `unblock`
-
+`mydel` delete all outgoing messages 
 🪩 DEV : https://www.github.com/amiralirj 
 🪩 DEV : @amiralirj_official 
 '''
@@ -338,6 +339,7 @@ Language : ENGLISH
 #-------------------------------------------------------------------------------------------------------------------------------------
 
         if lang :
+            self.all_m_deleted = 'تمامی پیام ها پاک شد !'
             self.deleted = 'کاربر حذف شده است !'
             self.only_text = 'این مقدار فقط میتواند متن باشد !'
             self.all_removed = 'تمامی مقدار ها پاک شد 🗑'
@@ -631,7 +633,7 @@ none : سلام
 `info` [reply]
 `block`
 `unblock`
-
+`mydel` پاکسازی تمامی پیام های خود
 🪩 DEV : https://www.github.com/amiralirj 
 🪩 DEV : @amiralirj_official 
 '''

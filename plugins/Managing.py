@@ -368,7 +368,7 @@ async def contacts_limit(bot,message,user,turn):
 @helper.user_Details
 @helper.turn
 async def texts_limit(bot,message,user,turn):
-    user.Text_Only(turn[0])
+    user.change_only_texts(turn[0])
     await message.edit_text(Text(user.Lang).has_turned(turn[-1]))
 
 @Rjself.on_message(helper.fil('(?i)^antilogin') , group=0)
