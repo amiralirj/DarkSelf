@@ -18,10 +18,13 @@ def is_contain_answer( text , user):
     return False
 
 def is_contain_spy( text , user):
-    for i in user.show_spyes : 
-        if i in text :
-            return True
-    return False
+    try:
+        for i in user.show_spyes : 
+            if i in text :
+                return True
+        return False
+    except:
+        return False
 
 def chat_action(user):
     if user.Chat_Status == 1:return ChatAction.CANCEL
@@ -165,7 +168,7 @@ async def private_messages(bot,message,user):
             return
 
     if user.Contacts_Only : 
-        if message.from_user.is_contact  :
+        if not message.from_user.is_contact  :
             await message.delete(True) 
             
     if user.Text_Only : 
